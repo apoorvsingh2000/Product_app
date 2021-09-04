@@ -23,14 +23,21 @@ class _VideoScreenState extends State<VideoScreen> {
                 ),
               ),
               Positioned(
-                bottom: MediaQuery.of(context).size.height * 0.075,
+                bottom: MediaQuery.of(context).size.height * 0.05,
                 left: MediaQuery.of(context).size.width * 0.35,
-                child: FlatButton(
-                  onPressed: () {},
-                  child: Text("Link"),
-                  color: Colors.transparent,
+                child: Material(
+                  color: Colors.transparent.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(30.0),
+                  child: MaterialButton(
+                    onPressed: () {},
+                    minWidth: 80.0,
+                    height: 10.0,
+                    child: Text(
+                      "View Product",
+                    ),
+                  ),
                 ),
-              )
+              ),
             ],
           );
         },
@@ -38,3 +45,24 @@ class _VideoScreenState extends State<VideoScreen> {
     );
   }
 }
+
+// Material(
+// elevation: 5.0,
+// color: Colors.transparent,
+// borderRadius: BorderRadius.circular(30.0),
+// child: Padding(
+// padding: EdgeInsets.all(4.0),
+// child: Material(
+// color: Colors.transparent,
+// borderRadius: BorderRadius.circular(30.0),
+// child: MaterialButton(
+// onPressed: () {},
+// minWidth: 100.0,
+// height: 30.0,
+// child: Text(
+// "View Product",
+// ),
+// ),
+// ),
+// ),
+// ),
