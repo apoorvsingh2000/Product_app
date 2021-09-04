@@ -33,7 +33,7 @@ class _VideoScreenState extends State<VideoScreen> {
                     minWidth: 80.0,
                     height: 10.0,
                     child: Text(
-                      "View Product",
+                      "View Product ",
                     ),
                   ),
                 ),
