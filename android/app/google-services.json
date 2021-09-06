@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "273283275382",
+    "project_id": "product-app-63156",
+    "storage_bucket": "product-app-63156.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273283275382:android:7fd2e75aaf62b510c65d57",
+        "android_client_info": {
+          "package_name": "com.apoorvsingh2000.product_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273283275382-iqlemg34gi914pbfumqtrv91jrfs5058.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO9Vb610TM1F2_fhZMGLOVKnoe1KZF3es"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "273283275382-iqlemg34gi914pbfumqtrv91jrfs5058.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
