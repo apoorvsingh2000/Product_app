@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:product_app/models/ProductItem.dart';
 import 'package:product_app/models/ProductItem.dart';
+import 'package:product_app/models/VideoPlayer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -45,12 +46,7 @@ class _VideoScreenState extends State<VideoScreen> {
                       itemBuilder: (context, index) {
                         return Stack(
                           children: [
-                            Container(
-                              color: Colors.blue,
-                              child: Center(
-                                child: Text(productItemList[index].videoUrl),
-                              ),
-                            ),
+                            VideoPlayerCustom(),
                             Positioned(
                               bottom: MediaQuery.of(context).size.height * 0.05,
                               left: MediaQuery.of(context).size.width * 0.35,
