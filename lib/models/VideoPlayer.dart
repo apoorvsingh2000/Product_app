@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerCustom extends StatefulWidget {
+  final _videoUrl;
+
+  VideoPlayerCustom(this._videoUrl);
+
   @override
   _VideoPlayerCustomState createState() => _VideoPlayerCustomState();
 }
@@ -12,10 +16,16 @@ class _VideoPlayerCustomState extends State<VideoPlayerCustom> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(
-        'https://firebasestorage.googleapis.com/v0/b/product-app-63156.appspot.com/o/video-1.mp4?alt=media&token=f194f306-c382-47b5-a6bc-7fefdef526d9');
+    _controller = VideoPlayerController.network(widget._videoUrl);
     _video = _controller.initialize();
     _controller.play();
+    _controller.setLooping(true);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _controller.dispose();
   }
 
   @override
@@ -25,10 +35,7 @@ class _VideoPlayerCustomState extends State<VideoPlayerCustom> {
         future: _video,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
-              child: VideoPlayer(_controller),
-            );
+            return VideoPlayer(_controller);
           } else {
             return Center(
               child: CircularProgressIndicator(),
@@ -39,3 +46,8 @@ class _VideoPlayerCustomState extends State<VideoPlayerCustom> {
     );
   }
 }
+
+// return AspectRatio(
+// aspectRatio: _controller.value.aspectRatio,
+// child: VideoPlayer(_controller),
+// );
