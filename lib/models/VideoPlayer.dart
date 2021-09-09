@@ -1,3 +1,4 @@
+import 'package:cached_video_player/cached_video_player.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
@@ -11,12 +12,12 @@ class VideoPlayerCustom extends StatefulWidget {
 }
 
 class _VideoPlayerCustomState extends State<VideoPlayerCustom> {
-  VideoPlayerController _controller;
+  CachedVideoPlayerController _controller;
   Future<void> _video;
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(widget._videoUrl);
+    _controller = CachedVideoPlayerController.network(widget._videoUrl);
     _video = _controller.initialize();
     _controller.play();
     _controller.setLooping(true);
@@ -35,7 +36,7 @@ class _VideoPlayerCustomState extends State<VideoPlayerCustom> {
         future: _video,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            return VideoPlayer(_controller);
+            return CachedVideoPlayer(_controller);
           } else {
             return Center(
               child: CircularProgressIndicator(),

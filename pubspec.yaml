@@ -14,12 +14,12 @@ dependencies:
 
   cupertino_icons: ^1.0.0
   chewie:
-  video_player:
   marquee:
   firebase_core:
   cloud_firestore:
   url_launcher:
   google_fonts:
+  cached_video_player:
 
 dev_dependencies:
   flutter_test:
